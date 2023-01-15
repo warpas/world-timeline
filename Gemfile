@@ -15,8 +15,14 @@ gem "pg", "~> 1.1"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", "~> 5.0"
 
+# Use the Passenger web server [https://www.phusionpassenger.com]
+# gem "passenger", ">= 6.0.16", require: "phusion_passenger/rack_handler"
+# TODO: uncomment the line above while adding passenger
+
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
+# TODO: run turbo:install
+# TODO: run importmap:install after turbo
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
@@ -54,6 +60,7 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  # gem 'dotenv-rails' # TODO: uncomment this when adding sensitive data
 end
 
 group :development do
@@ -66,6 +73,13 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
   gem "capistrano", "~> 3.17", require: false
+  gem 'capistrano-rails'
+  # gem 'capistrano-passenger' # TODO: uncomment this while adding passenger
+  gem 'capistrano-asdf'
+
+  # Add support for ssh-ed25519 keys
+  gem 'ed25519'
+  gem 'bcrypt_pbkdf'
 end
 
 group :test do

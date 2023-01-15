@@ -1,8 +1,14 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.17.1"
 
-set :application, "my_app_name"
-set :repo_url, "git@example.com:me/my_repo.git"
+set :application, "world-timeline"
+set :repo_url, "git@github.com:warpas/world-timeline.git"
+set :branch, "main"
+set :deploy_to, "/home/deploy/#{fetch :application}"
+append :linked_files, "config/master.key"
+
+# set :passenger_restart_with_touch, true
+# TODO: uncomment the line above while adding passenger
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
