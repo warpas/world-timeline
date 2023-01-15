@@ -1,0 +1,2 @@
+class TimelinePoint < ApplicationRecord
+end
