@@ -7,10 +7,8 @@
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
-# require 'dotenv/load'
-# server ENV['TIMELINE_PRODUCTION_HOST'], user: ENV['TIMELINE_PRODUCTION_DEPLOY_USER'], roles: %w[app]
-# TODO: uncomment the above when adding dotenv
-server "timeline_production_server_url", user: "deploy", roles: %w[app]
+require 'dotenv/load'
+server ENV['TIMELINE_PRODUCTION_HOST'], user: ENV['TIMELINE_PRODUCTION_DEPLOY_USER'], roles: %w[app]
 
 
 # role-based syntax
