@@ -81,6 +81,6 @@ test:
 #
 production:
   <<: *default
-  database: world_timeline_production
-  username: world_timeline
-  password: <%= ENV["WORLD_TIMELINE_DATABASE_PASSWORD"] %>
+  database: <%= ENV["TIMELINE_PRODUCTION_DATABASE_DBNAME"] %>
+  username: <%= ENV["TIMELINE_PRODUCTION_DATABASE_USERNAME"] %>
+  password: <%= ENV["TIMELINE_PRODUCTION_DATABASE_PASSWORD"] %>
